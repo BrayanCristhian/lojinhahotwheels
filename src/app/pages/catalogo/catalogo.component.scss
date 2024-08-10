@@ -108,3 +108,42 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
 }
+// Variáveis para cores e outros estilos
+$primary-color: #007bff;
+$button-hover-color: #0056b3;
+$text-color: #fff;
+$border-radius: 5px;
+
+// Reset básico e centralização
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.login-container {
+    text-align: center;
+}
+
+.login-button {
+    display: inline-block;
+    background-color: $primary-color;
+    color: $text-color;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $button-hover-color;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
