@@ -1,0 +1,88 @@
+<app-menu></app-menu>
+
+    <div class="container">
+        <h1>Formulário de Cadastro</h1>
+        <form action="#" method="post">
+            <div calss="form-group">
+                <label for="acao">Ação:</label>
+                <input type="text" id="acao" name="acao" required>
+            </div>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecione um tipo</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="fornecedor">Fornecedor</option>
+                    <option value="funcionario">Funcionário</option>
+                </select>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    
+        <h3 class="mt-5">Relatorio de Usuarios</h3>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Ação</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Excluir</button>
+                    </td>
+                    <td>1</td>
+                    <td>Brayan</td>
+                    <td>Cristhian</td>
+                    <td>brayancristhian&#64;gmail.com.br</td>
+                    <td>123456</td>
+                    <td>40028922</td>
+                    <td>Bairro do sol</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Excluir</button>
+                    </td>
+                    <td>2</td>
+                    <td>João</td>
+                    <td>Vitor</td>
+                    <td>joaovitor&#64;gmail.com.br</td>
+                    <td>654321</td>
+                    <td>84325437</td>
+                    <td>Rio morto</td>
+                </tr>
+            </tbody>
+        </table>
+
