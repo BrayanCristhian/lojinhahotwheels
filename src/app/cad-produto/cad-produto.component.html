@@ -2,7 +2,8 @@
 <div class="container">
     <h1>Cadastro de Produtos</h1>
    
-       <form><div class="form-group">
+        <form [formGroup]="formulario">
+        <div class="form-group">
         <label for="id">ID:</label>
         <input id="id" formControlName="id" type="number" class="form-control">
       </div>
@@ -34,7 +35,8 @@
         <label for="Descricao">Descrição:</label>
         <input id="Descricao" formControlName="Descricao" type="text" class="form-control">
        
-       <button type="submit">Cadastrar Produto</button>
+        <button (click)="onSave()">Cadastrar Produto</button>
+        <button (click)="onCancelar()">Remover Produto</button>
        <button routerLink="/home">Voltar</button>
 </form>
 <h3 class="mt-5">Relatorio de Produtos</h3>
