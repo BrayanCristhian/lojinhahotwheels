@@ -42,6 +42,7 @@
                     <option value="cliente">Cliente</option>
                     <option value="fornecedor">Fornecedor</option>
                     <option value="funcionario">Funcionário</option>
+                    <option *ngFor="let tipo of arrTipos" [value]="tipo.id_tupo">{{tipo.descricao}}</option>
                 </select>
             </div>
             <button (click)="onSave()">Enviar</button>
