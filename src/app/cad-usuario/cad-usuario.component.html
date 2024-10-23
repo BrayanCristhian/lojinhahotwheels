@@ -24,12 +24,12 @@
                 <input type="email" id="email" formControlName="email">
             </div>
             <div class="form-group">
-                <label for="acao">Ação:</label>
-                <input type="text" id="acao" formControlName="acao">
+                <label for="login">Login:</label>
+                <input type="text" id="login" formControlName="login">
             </div>
             <div class="form-group">
-                <label for="dt_de_nascimento">Data de Nascimento:</label>
-                <input type="text" id="dt_de_nascimento" formControlName="dt_de_nascimento" >
+                <label for="dt_nascimento">Data de Nascimento:</label>
+                <input type="date" id="dt_nascimento" formControlName="dt_nascimento" >
             </div>
             <!--<div class="form-group">
               <label for="dt_de_nascimento">Data de Nascimento:</label>
@@ -37,16 +37,14 @@
             </div>-->
             <div class="form-group">
                 <label for="tipo">Tipo:</label>
-                <select id="tipo" name="tipo" required>
+                <select id="tipo" formControlName="tipo" required>
                     <option value="">Selecione um tipo</option>
-                    <option value="cliente">Cliente</option>
-                    <option value="fornecedor">Fornecedor</option>
-                    <option value="funcionario">Funcionário</option>
-                    <option *ngFor="let tipo of arrTipos" [value]="tipo.id_tupo">{{tipo.descricao}}</option>
+                    <option *ngFor="let tipo of arrTipos" [value]="tipo.id_tipo">{{tipo.descricao}}</option>
                 </select>
             </div>
             <button (click)="onSave()">Enviar</button>
             <button (click)="onCancelar()">Tirar</button>
+        <p>{{mensagem}}</p>
         </form>
     
         <h3 class="mt-5">Relatorio de Usuarios</h3>

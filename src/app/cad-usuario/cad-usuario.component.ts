@@ -6,7 +6,7 @@ import { TipoService } from '../services/tipo.service';
 @Component({
   selector: 'app-cad-usuario',
   templateUrl: './cad-usuario.component.html',
-  styleUrl: './cad-usuario.component.scss'
+  styleUrl: './cad-usuario.component.scss',
 })
 export class CadUsuarioComponent {
   formulario = new FormGroup({
@@ -15,49 +15,51 @@ export class CadUsuarioComponent {
     senha: new FormControl(''),
     telefone: new FormControl(''),
     email: new FormControl(''),
-    acao: new FormControl(''),
-    dt_de_nascimento: new FormControl(''),
-  })
-  onSave(){
-    //chama o serviço para gravas as informações no banco de dados
-  let dados = this.formulario.value;
+    login: new FormControl(''),
+    tipo: new FormControl(''),
+    dt_nascimento: new FormControl(''),
+  });
 
-  this.usuarioService.salvar(dados).subscribe({
-    next:(res)=>{
-      console.log(res)
-    },
-    error:(error)=>{
-      console.log(error)
-    }
-  })
+  mensagem: string = '';
+
+  onSave() {
+    //chama o serviço para gravas as informações no banco de dados
+    let dados = this.formulario.value;
+
+    this.usuarioService.salvar(dados).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.mensagem = 'Usuário adicionado com sucesso!';
+      },
+      error: (error) => {
+        console.log(error);
+        this.mensagem = 'Erro ao adicionar usuário.';
+      },
+    });
   }
-  onCancelar(){
-    this.formulario.reset()
+  onCancelar() {
+    this.formulario.reset();
   }
 
   //busca os tipo e armazena numa variavel
-  arrTipos:any[] = [];
+  arrTipos: any[] = [];
 
-  buscaTipos(){
+  buscaTipos() {
     this.tipoService.getTipos().subscribe({
-      next:(res)=>{
+      next: (res) => {
         this.arrTipos = res.body;
         console.log(this.arrTipos);
       },
-      error:(erro)=>{
+      error: (erro) => {
         console.log(erro);
-      }
-    })
+      },
+    });
   }
 
-
-constructor(
-  private usuarioService:UsuarioService,
-  private tipoService:TipoService
-){
-  this.buscaTipos()
+  constructor(
+    private usuarioService: UsuarioService,
+    private tipoService: TipoService
+  ) {
+    this.buscaTipos();
+  }
 }
-
-}
-
-
